@@ -1,0 +1,14 @@
+node_modules/
+dist/
+.npm-cache/
+.env
+.env.*
+inputs/**
+!inputs/**/
+!inputs/**/.gitkeep
+work/
+public/videos/
+public/posters/
+public/logos/
+public/models/
+*.log
