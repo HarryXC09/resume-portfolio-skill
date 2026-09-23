@@ -170,7 +170,8 @@ export const profile = {
   },
   "contact": {
     "email": "",
-    "wechat": ""
+    "wechat": "",
+    "phone": ""
   },
   "media": {
     "hero": 1,

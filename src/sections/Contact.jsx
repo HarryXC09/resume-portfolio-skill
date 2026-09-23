@@ -63,6 +63,10 @@ export default function Contact({ t }) {
             <span className="meta">Wechat</span>
           <span>{profile.contact.wechat}</span>
           </div>}
+          {profile.contact.phone && <div className="wechat-contact">
+            <span className="meta">PHONE</span>
+            <a href={`tel:${profile.contact.phone}`}>{profile.contact.phone}</a>
+          </div>}
         </div>
       </div>
     </section>

@@ -20,7 +20,7 @@
 | inputs/logos/ | 学校、单位 Logo，透明 PNG / SVG，文件名写明机构 |
 | inputs/models/ | 可选 Web GLB；不适用时用项目图片 |
 
-[素材拍摄与命名指南](references/materials.md) · [文案与页面替换指南](references/adaptation.md)
+[素材拍摄与命名指南](references/materials.md) · [文案与页面替换指南](references/adaptation.md) · [Word 文案输入表说明](template/WORD_CONTENT_TEMPLATE.md)
 
 ## 本地命令
 
@@ -33,6 +33,8 @@ npm run media
 npm run build
 npm run preview
 ```
+
+文字内容入口是 `template/resume-portfolio-content-template-v2.docx`。编辑“可编辑内容”列后运行 `python scripts/word_to_profile.py template/resume-portfolio-content-template-v2.docx --out profile.json`。其中 `modules[]` 可按个人 CV 改成项目经历、作品集、奖项荣誉、客户案例、研究或论文等模块，不要求沿用学术分类。
 
 未放素材也能构建并展示占位图，不能视为完成的个人网站。开发运行 `npm run dev`。页面技术：React / Vite / GSAP / Three.js，字体通过 Fontsource 本地打包。静态站部署目录为 dist。
 
