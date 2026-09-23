@@ -10,11 +10,11 @@
 | --- | --- |
 | 姓名/职业/关键词 | profile.identity → header、Hero、跑马灯、footer |
 | 简介与能力 | profile.about.intro、dimensions，每行英文标签/中文标签/中文描述/英文描述 |
-| 经验或技能卡片 | profile.clinical.cards，每项 name/zh/body[中,英]/video/tag |
+| 经验或技能卡片 | profile.clinical.cards，每项 name/zh/body[中,英]/video/tag；根据 CV 改为项目、作品、奖项、客户案例或专业实践 |
 | 时间线 | profile.journey.entries，每项日期/英文标题/中文标题/中文描述/英文描述/Logo文件名或null |
-| 专业主题 | profile.research.topics，每项英文多行标题/中文描述/英文描述 |
-| 代表作品 | profile.publication，论文或项目；没有则隐藏 Publication 或改成有事实依据的作品 |
-| 公开联系 | profile.contact，空值不渲染链接 |
+| 专业主题 / 模块二 | profile.research.topics，每项英文多行标题/中文描述/英文描述；也可改成作品、技能或奖项 |
+| 精选成果 / 模块三 | profile.publication，字段可承载项目、作品、奖项、客户成果或论文；没有适用内容时隐藏或合并 |
+| 公开联系 | profile.contact.email / wechat / phone，空值不渲染；只发布明确授权的信息 |
 | 视频镜头 | profile.media.hero/about/contact 与 cards[].video，编号对应素材表 |
 
 profile.js 使用 JavaScript export，不要把 JSON 文件放一边却忘记页面数据。双语内容从同一事实导出。

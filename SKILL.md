@@ -13,7 +13,7 @@ description: 从用户简历、人物动作视频和机构 Logo 复刻交互式�
 2. 用用户的语言一次性说明：简历放 `inputs/resume/`；动作视频放 `inputs/videos/`；照片放 `inputs/photos/`；学校、工作单位 Logo 放 `inputs/logos/`；可选模型放 `inputs/models/`。给出材料指南中的镜头建议，提醒将绿幕布光均匀且人物服装避免绿色。
 3. 检查已提交材料，缺简历时等待，不能虚构履历。缺部分视频时先分析简历并完成文案；告诉用户哪些区块暂用照片/重复镜头，哪些素材仍需补齐。空目录及占位图不算用户材料。
 4. 读取 `references/adaptation.md`，执行事实提取、文案映射、素材加工、组件替换和浏览器验收。用户说材料已准备好后重新运行 intake，不重复询问是否继续。
-5. 使用 `template/resume-portfolio-content-template-v2.docx` 作为文字输入表：先填写身份、About、教育/工作经历、联系方式，再高密度填写 `modules[]`。Word 表中的 `modules[]` 不预设行业，Agent 要根据 CV 选择项目经历、个人作品集、奖项荣誉、研究、论文、客户案例或专业实践等类型；初稿保留 3 个模块、每个模块最多 4 个条目，人工确认后再删减。
+5. 使用 `template/resume-portfolio-content-template-general.docx` 作为文字输入表。它沿用维护者优化版的四列表格排版；先填写身份、About、教育/工作经历、联系方式，再高密度填写 `modules[]`。Word 表中的 `modules[]` 不预设行业，Agent 要根据 CV 选择项目经历、个人作品集、奖项荣誉、研究、论文、客户案例或专业实践等类型；初稿可填 3 个模块，首个模块最多 4 个条目，人工确认后再删减。仓库以 `template/resume-portfolio-layout-source.docx` 作为去除个人元数据的版式来源；需要重建通用字段版本时运行 `python scripts/adapt_user_word_template.py`，不要写回来源文件。
 
 ## 事实与内容
 

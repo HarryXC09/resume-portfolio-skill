@@ -34,7 +34,7 @@ npm run build
 npm run preview
 ```
 
-文字内容入口是 `template/resume-portfolio-content-template-v2.docx`。编辑“可编辑内容”列后运行 `python scripts/word_to_profile.py template/resume-portfolio-content-template-v2.docx --out profile.json`。其中 `modules[]` 可按个人 CV 改成项目经历、作品集、奖项荣誉、客户案例、研究或论文等模块，不要求沿用学术分类。
+文字内容入口是 `template/resume-portfolio-content-template-general.docx`，沿用维护者优化版的表格排版。编辑“可编辑内容”列后运行 `python scripts/word_to_profile.py template/resume-portfolio-content-template-general.docx --out profile.json`。其中 `modules[]` 可按个人 CV 改成项目经历、作品集、奖项荣誉、客户案例、研究或论文等模块，不要求沿用学术分类。版式来源副本为 `template/resume-portfolio-layout-source.docx`；更新通用字段时运行 `python scripts/adapt_user_word_template.py`，输出写入 general 文件。
 
 未放素材也能构建并展示占位图，不能视为完成的个人网站。开发运行 `npm run dev`。页面技术：React / Vite / GSAP / Three.js，字体通过 Fontsource 本地打包。静态站部署目录为 dist。
 
