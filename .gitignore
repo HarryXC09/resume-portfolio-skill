@@ -11,5 +11,6 @@ public/videos/
 public/posters/
 public/logos/
 public/models/*
-!public/models/tumor-cell-web.glb
+!public/models/tumor-cell-default.glb
 *.log
+

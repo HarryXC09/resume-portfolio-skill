@@ -35,7 +35,7 @@ export async function mountCell(canvas, section, reduced, onReady) {
   let model;
   try {
     model = (
-      await new GLTFLoader().loadAsync(asset("models/tumor-cell-web.glb"))
+      await new GLTFLoader().loadAsync(asset("models/tumor-cell-default.glb"))
     ).scene;
   } catch (e) {
     renderer.dispose();
@@ -219,3 +219,4 @@ export async function mountCell(canvas, section, reduced, onReady) {
     delete window.cellQA;
   };
 }
+
