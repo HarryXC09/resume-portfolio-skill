@@ -36,7 +36,7 @@ export default function App() {
             root.current,
           );
           paths.forEach((path) => {
-            const length = path.getTotalLength();
+            const length = typeof path.getTotalLength === "function" ? path.getTotalLength() : path.getComputedTextLength();
             gsap.set(path, {
               strokeDasharray: length,
               strokeDashoffset: length,
@@ -96,17 +96,15 @@ export default function App() {
               { opacity: 1, y: 0, duration: 0.12 },
               0.88,
             );
-          // Match the reference's dash reveal mechanism, with an original asymmetrical arc.
-          [
-            { start: 0.38, duration: 0.28 },
-            { start: 0.66, duration: 0.16 },
-          ].forEach((phase, i) => {
+          // Reveal the English name as a hand-drawn signature while the hero contracts.
+          paths.forEach((path, i) => {
+            const start = 0.22 + i * 0.085;
             timeline
-              .set(paths[i], { autoAlpha: 1 }, phase.start)
+              .set(path, { autoAlpha: 1 }, start)
               .to(
-                paths[i],
-                { strokeDashoffset: 0, duration: phase.duration, ease: "none" },
-                phase.start,
+                path,
+                { strokeDashoffset: 0, duration: 0.13, ease: "none" },
+                start,
               );
           });
         },
@@ -185,16 +183,10 @@ export default function App() {
           <svg
             className="hero-signature"
             viewBox="0 0 1920 1080"
-            aria-hidden="true"
+            role="img"
+            aria-label={`${profile.identity.name} signature animation`}
           >
-            <path
-              className="hero-signature-path"
-              d="M 330 720 C 555 566, 802 410, 1080 338"
-            />
-            <path
-              className="hero-signature-path"
-              d="M 1080 338 C 1272 282, 1458 310, 1574 424 C 1646 492, 1664 579, 1585 675"
-            />
+            <text className="hero-signature-path" x="960" y="720" textAnchor="middle">{profile.identity.name}</text>
           </svg>
           <p className="hero-end meta">
             {profile.identity.heroTagline}
@@ -249,3 +241,4 @@ function About({ t }) {
     </section>
   );
 }
+

@@ -10,5 +10,6 @@ work/
 public/videos/
 public/posters/
 public/logos/
-public/models/
+public/models/*
+!public/models/tumor-cell-web.glb
 *.log
